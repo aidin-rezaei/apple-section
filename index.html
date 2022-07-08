@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            /* background-color: #262727; */
+        }
+
+        div {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .div {
+            position: relative;
+            background: #f5f5f7;
+        }
+
+        .div2 {
+            position: relative;
+            background: radial-gradient(at top right, #0ae8b5, #00bb53);
+        }
+
+        .div3 {
+            position: relative;
+            background: radial-gradient(at top right, #796bf2, #572f91);
+        }
+
+        .div4 {
+            position: relative;
+            background: radial-gradient(at top right, #ea6037, #d62c3f);
+        }
+
+        .box {
+            position: fixed;
+            top: calc((100%/3));
+            left: calc((100%/2) + 50px);
+            width: 500px;
+            height: 300px;
+            /* background: #000; */
+            /* object-fit: contain; */
+            overflow: hidden;
+            z-index: 4;
+        }
+
+        .box img {
+
+            object-fit: contain;
+        }
+
+        .bb {
+            position: fixed;
+            top: calc((100%/3));
+            left: calc((100%/2));
+            width: 900px;
+            height: 500px;
+            /* background: #000; */
+            /* object-fit: contain; */
+            overflow: hidden;
+        }
+
+        .bb video {
+            width: 900px;
+            height: 500px;
+            object-fit: contain;
+        }
+
+        .box1 {
+            z-index: 3;
+        }
+
+        .box2 {
+            z-index: 2;
+        }
+
+        .box3 {
+            z-index: 1;
+        }
+
+        .con {
+            width: calc(100% / 3);
+            padding: 300px 150px;
+            margin-left: 100px;
+            font-family: sans-serif;
+        }
+
+        .shodow {
+            position: fixed;
+            top: calc((100%/3));
+            left: calc((100%/2));
+            margin: -10px;
+            width: 900px;
+            height: 500px;
+            z-index: 0;
+        }
+
+        p {
+            margin-top: 20px;
+            display: flex;
+            font-size: 23px;
+            line-height: 1.5em;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+        .div p {
+            color: #959495;
+        }
+        .div2 p {
+            color: #afe9c4;
+        }
+        .div3 p {
+            color: #beb8d8;
+        }
+        .div4 p {
+            color: #fac0cb;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div">
+        <div class="con">
+            <img src="https://www.apple.com/v/apple-tv-4k/z/images/overview/rooms/apple_tv_plus_logo__fsaj7pvj15ua_large.png"
+                alt="">
+            <h2>Apple TV+</h2>
+            <p>
+                . Watch critically acclaimed series and films, groundbreaking documentaries, kids’ entertainment,
+                comedies, and more — with new Apple Originals added every month.4</p>
+        </div>
+        <div class="box bb"><video src="1.mp4" autoplay loop></video></div>
+    </div>
+    <div class="div2">
+        <div class="con">
+            <img src="https://www.apple.com/v/apple-tv-4k/z/images/overview/rooms/apple_fitness_app__f1308801a2em_large.png"
+                alt="">
+            <h2>Apple Fitness</h2>
+            <p>
+                . Choose from a catalog of workouts led by expert trainers.4 In-session metrics from your
+                Apple Watch, like heart rate and calories burned, are shown on your big screen in real time, so you can
+                focus on your workout and see how you’re doing. And you’ll be able to work out with your friends in real
+                time with Fitness+ Group Workouts, powered by SharePlay.</p>
+        </div>
+        <div class="box1 bb"><video src="2.mp4" autoplay loop></video></div>
+    </div>
+    <div class="div3">
+        <div class="con">
+            <img src="https://www.apple.com/v/apple-tv-4k/z/images/overview/rooms/apple_music_app__w7qoepf8fo26_large.png"
+                alt="">
+            <h2>Apple Music.</h2>
+            <p>
+                . Access over 90 million songs — and music videos from the ’80s to today’s top artists — all through
+                your Apple TV 4K. You can even sing along to your favorite songs — word for word — with lyrics view.4
+            </p>
+        </div>
+        <div class="box2 bb" id="b1"><video src="3.mp4" autoplay loop></video></div>
+    </div>
+    <div class="div4">
+        <div class="con">
+            <img src="https://www.apple.com/v/apple-tv-4k/z/images/overview/rooms/apple_arcade_app__eqg38rqct54y_large.png"
+                alt="">
+            <h2>Apple Arcade</h2>
+            <p>
+                The experience of playing Apple Arcade games — from brain teasers to magical quests to endless runners —
+                is all too immersive on your big screen with Apple TV 4K.4</p>
+        </div>
+        <div class="box3 bb"><video src="4.mp4" autoplay loop></video></div>
+    </div>
+    <div class="shodow"><img src="1.png" alt=""></div>
+    <script>
+        var posX = window.scrollX;
+        var posY = window.scrollY;
+        const body = document.getElementsByClassName('div2')[0]
+        const body2 = document.getElementsByClassName('box')[0]
+        const body3 = document.getElementsByClassName('div3')[0]
+        const body4 = document.getElementsByClassName('box1')[0]
+        const body6 = document.getElementsByClassName('box2')[0]
+        window.addEventListener('scroll', () => {
+            // if (scrollY >= body2.offsetTop) {
+            let h2 = 'calc((100% /3) - (' + ((Number(window.scrollY) - Number(body2.offsetTop))) + 'px))';
+            body2.style.setProperty('height', h2);
+            let h3 = 'calc((100% /3) - (' + ((Number(window.scrollY) - (Number(body.offsetTop) + body2.offsetTop))) + 'px))';
+            body4.style.setProperty('height', h3);
+            let h4 = 'calc((100% /3) - (' + ((Number(window.scrollY) - (Number(body.offsetTop) + body2.offsetTop * 4))) + 'px))';
+            body6.style.setProperty('height', h4);
+            // console.log(h2)
+            // }
+        })
+        // scrollTo = (element) => {
+        //     window.scroll({
+        //         behavior: "smooth",
+        //         left: 0,
+        //         top: element.offsetTop,
+        //     });
+        //     console;
+        // };
+
+        // window.addEventListener("scroll", () => {
+        //     scrollTo(document.getElementById("b1"));
+        // });
+    </script>
+</body>
+
+</html>
